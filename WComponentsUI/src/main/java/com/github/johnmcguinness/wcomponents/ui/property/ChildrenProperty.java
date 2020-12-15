@@ -14,7 +14,7 @@ import java.util.List;
  */
 public final class ChildrenProperty
 	implements Property<List<WComponent>>,
-        Panel.PropertySetter, FieldSet.PropertySetter, Section.PropertySetter {
+	Panel.PropertySetter, FieldSet.PropertySetter, Section.PropertySetter {
 
 	private final List<WComponent> value;
 	

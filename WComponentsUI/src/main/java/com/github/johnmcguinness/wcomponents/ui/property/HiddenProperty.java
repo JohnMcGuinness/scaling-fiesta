@@ -1,6 +1,7 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.johnmcguinness.wcomponents.ui.component.CheckBoxGroup;
+import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
 import com.github.johnmcguinness.wcomponents.ui.component.ProgressBar;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
 
@@ -10,7 +11,8 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  */
 public final class HiddenProperty
 	extends BooleanProperty
-	implements CheckBoxGroup.PropertySetter, ProgressBar.PropertySetter, Section.PropertySetter {
+	implements CheckBoxGroup.PropertySetter, ProgressBar.PropertySetter,
+        Section.PropertySetter, FieldLayout.PropertySetter {
 
 	public static HiddenProperty hidden(final boolean value) {
 		return new HiddenProperty(value);
@@ -33,5 +35,10 @@ public final class HiddenProperty
 	@Override
 	public void apply(final Section section) {
 		section.setHidden(value());
+	}
+
+	@Override
+	public void apply(final FieldLayout fieldlayout) {
+		fieldlayout.setHidden(value());
 	}
 }

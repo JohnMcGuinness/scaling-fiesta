@@ -6,7 +6,8 @@ import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
  *
  * @author John McGuinness
  */
-public final class FrameTypeProperty implements Property<FieldSet.FrameType>, FieldSet.PropertySetter {
+public final class FrameTypeProperty
+	implements Property<FieldSet.FrameType>, FieldSet.PropertySetter {
 
 	private final FieldSet.FrameType value;
 

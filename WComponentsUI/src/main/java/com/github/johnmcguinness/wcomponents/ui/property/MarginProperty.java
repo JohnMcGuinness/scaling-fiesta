@@ -2,6 +2,7 @@ package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.bordertech.wcomponents.Margin;
 import com.github.bordertech.wcomponents.Size;
+import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
 import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
@@ -11,7 +12,8 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class MarginProperty
-        implements Property<Margin>, Panel.PropertySetter, FieldSet.PropertySetter, Section.PropertySetter {
+	implements Property<Margin>, Panel.PropertySetter, FieldSet.PropertySetter,
+	Section.PropertySetter, FieldLayout.PropertySetter {
 
 	private final Margin value;
 
@@ -53,5 +55,10 @@ public final class MarginProperty
 	@Override
 	public void apply(final FieldSet fieldset) {
 		fieldset.setMargin(value());
+	}
+
+	@Override
+	public void apply(final FieldLayout fieldlayout) {
+		fieldlayout.setMargin(value());
 	}
 }

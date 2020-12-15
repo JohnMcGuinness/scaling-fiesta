@@ -90,7 +90,7 @@ public final class Section extends WSection {
 	}
 
 	/**
-	 * A property for a {@link Panel}.
+	 * A property for a {@link Section}.
 	 *
 	 * @author John McGuinness
 	 */

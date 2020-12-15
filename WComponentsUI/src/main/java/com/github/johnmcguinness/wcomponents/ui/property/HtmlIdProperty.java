@@ -1,6 +1,8 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.johnmcguinness.wcomponents.ui.component.CheckBoxGroup;
+import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
+import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
 import com.github.johnmcguinness.wcomponents.ui.component.ProgressBar;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
@@ -11,7 +13,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  */
 public final class HtmlIdProperty
 	extends StringProperty
-	implements ProgressBar.PropertySetter, CheckBoxGroup.PropertySetter, Panel.PropertySetter, Section.PropertySetter {
+	implements ProgressBar.PropertySetter, CheckBoxGroup.PropertySetter,
+        Panel.PropertySetter, Section.PropertySetter, FieldSet.PropertySetter,
+        FieldLayout.PropertySetter {
 	
 	public static HtmlIdProperty htmlId(final String value) {
 		return new HtmlIdProperty(value);
@@ -39,5 +43,15 @@ public final class HtmlIdProperty
 	@Override
 	public void apply(final Section section) {
 		section.setIdName(value());
+	}
+
+	@Override
+	public void apply(final FieldSet fieldset) {
+		fieldset.setIdName(value());
+	}
+
+	@Override
+	public void apply(final FieldLayout fieldlayout) {
+		fieldlayout.setIdName(value());
 	}
 }

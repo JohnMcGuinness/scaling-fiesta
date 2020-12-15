@@ -1,5 +1,7 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
+import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
+import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
 
@@ -8,8 +10,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class ValidateProperty
-        extends BooleanProperty
-        implements Panel.PropertySetter, Section.PropertySetter {
+	extends BooleanProperty
+	implements Panel.PropertySetter, Section.PropertySetter,
+	FieldSet.PropertySetter, FieldLayout.PropertySetter {
 
 	public static ValidateProperty validate(final boolean value) {
 		return new ValidateProperty(value);
@@ -21,11 +24,21 @@ public final class ValidateProperty
 
 	@Override
 	public void apply(final Panel panel) {
-		panel.setVisible(value());
+		panel.setValidate(value());
 	}
 
 	@Override
 	public void apply(final Section section) {
-		section.setVisible(value());
+		section.setValidate(value());
+	}
+
+	@Override
+	public void apply(final FieldSet fieldset) {
+		fieldset.setValidate(value());
+	}
+
+	@Override
+	public void apply(final FieldLayout fieldlayout) {
+		fieldlayout.setValidate(value());
 	}
 }

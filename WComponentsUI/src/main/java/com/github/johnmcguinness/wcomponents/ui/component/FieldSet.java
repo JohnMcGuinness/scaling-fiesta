@@ -12,7 +12,11 @@ public final class FieldSet extends WFieldSet {
 	
 	private static final String MANDATORY_ATTRIBUTE = "FieldSet.mandatory";
 
-	/**
+	private static final String VISIBLE_ATTRIBUTE = "FieldSet.visible";
+	
+	private static final String HIDDEN_ATTRIBUTE = "FieldSet.hidden";
+
+        /**
 	 * Describes how the field set's frame is rendered.
 	 */
 	public enum FrameType {
@@ -72,7 +76,38 @@ public final class FieldSet extends WFieldSet {
 		final Lazy<Boolean> isMandatory = (Lazy<Boolean>) getAttribute(MANDATORY_ATTRIBUTE);
 		return isMandatory == null ? super.isMandatory() : Boolean.TRUE.equals(isMandatory.get());
 	}	
+
+
+	@Override
+	public void setVisible(final boolean visible) {
+		setVisible(() -> visible);
+	}
+
+	public void setVisible(final Lazy<Boolean> visible) {
+		setAttribute(VISIBLE_ATTRIBUTE, visible);
+	}
 	
+	@Override
+	public boolean isVisible() {
+		final Lazy<Boolean> isVisible = (Lazy<Boolean>) getAttribute(VISIBLE_ATTRIBUTE);
+		return isVisible == null ? super.isVisible() : Boolean.TRUE.equals(isVisible.get());
+	}
+
+	@Override
+	public void setHidden(final boolean hidden) {
+		setHidden(() -> hidden);
+	}
+
+	public void setHidden(final Lazy<Boolean> hidden) {
+		setAttribute(HIDDEN_ATTRIBUTE, hidden);
+	}
+	
+	@Override
+	public boolean isHidden() {
+		final Lazy<Boolean> isHidden = (Lazy<Boolean>) getAttribute(HIDDEN_ATTRIBUTE);
+		return isHidden == null ? super.isVisible() : Boolean.TRUE.equals(isHidden.get());
+	}
+        
 	/**
 	 * Sets a property for a {@link FieldSet}.
 	 *

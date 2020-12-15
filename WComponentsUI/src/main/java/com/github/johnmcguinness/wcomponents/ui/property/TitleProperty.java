@@ -1,5 +1,6 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
+import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
 import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
 import java.util.Objects;
 
@@ -8,7 +9,9 @@ import java.util.Objects;
  * 
  * @author John McGuinness
  */
-public final class TitleProperty implements Property<String>, FieldSet.PropertySetter {
+public final class TitleProperty
+	implements Property<String>, FieldSet.PropertySetter,
+	FieldLayout.PropertySetter {
 
 	private final String value;
 
@@ -28,6 +31,11 @@ public final class TitleProperty implements Property<String>, FieldSet.PropertyS
 	@Override
 	public void apply(final FieldSet fieldset) {
 		fieldset.setTitle(value());
+	}
+
+	@Override
+	public void apply(final FieldLayout fieldlayout) {
+		fieldlayout.setTitle(value());
 	}
 
 	@Override
