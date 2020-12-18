@@ -6,7 +6,7 @@ import com.github.bordertech.wcomponents.layout.FlowLayout;
 
 /**
  * The horizontal alignment of a component's contents.
- * 
+ *
  * @author John McGuinness
  */
 public enum HAlign {
@@ -22,10 +22,10 @@ public enum HAlign {
 	 * Right aligned.
 	 */
 	RIGHT;
-	
+
 	/**
 	 * Converts this {@link HAlign} to a {@link FlowLayout.Alignment}.
-	 * 
+	 *
 	 * @return the equivalent {@link FlowLayout.Alignment}.
 	 */
 	public FlowLayout.Alignment toFlowLayoutAlignment() {
@@ -39,7 +39,7 @@ public enum HAlign {
 
 	/**
 	 * Converts this {@link HAlign} to a {@link WTableColumn.Alignment}.
-	 * 
+	 *
 	 * @return the equivalent {@link WTableColumn.Alignment}.
 	 */
 	public WTableColumn.Alignment toTableColumnAlignment() {
@@ -53,7 +53,7 @@ public enum HAlign {
 
 	/**
 	 * Converts this {@link HAlign} to a {@link WColumn.Alignment}.
-	 * 
+	 *
 	 * @return the equivalent {@link WColumn.Alignment}.
 	 */
 	public WColumn.Alignment toColumnAlignment() {

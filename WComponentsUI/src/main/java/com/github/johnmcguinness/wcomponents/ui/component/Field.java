@@ -9,32 +9,31 @@
 //
 package com.github.johnmcguinness.wcomponents.ui.component;
 
-import com.github.bordertech.wcomponents.WField;
+import com.github.bordertech.wcomponents.WComponent;
+import java.util.Objects;
 
 /**
  *
  * @author John McGuinness
  */
-public final class Field extends WField {
+public final class Field {
 
-	public static Field field(final PropertySetter... props) {
-		return new Field();
+	private final Label label;
+
+	private final WComponent labelled;
+
+	public Field(final Label label, final WComponent labelled) {
+		this.label = Objects.requireNonNull(label);
+		this.labelled = Objects.requireNonNull(labelled);
 	}
 
-	private Field() { }
+	public Label label() {
+		return this.label;
+	}
 
-	/**
-	 * A property for a {@link Field}.
-	 *
-	 * @author John McGuinness
-	 */
-	public interface PropertySetter {
-
-		/**
-		 * Applies the property to a {@link Field}.
-		 *
-		 * @param field the field to apply the property to.
-		 */
-		void apply(Field field);
+	public WComponent labelled() {
+		return this.labelled;
 	}
 }
+
+

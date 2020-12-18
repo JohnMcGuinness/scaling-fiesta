@@ -5,15 +5,22 @@ import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.stream.Stream;
 
 /**
- * A Panel is used to group components together. Layouts can be used to arrange components
- * within the panel.
+ * A Panel is used to group components together. Layouts can be used to
+ * arrange components within the panel.
  *
  * @author John McGuinness
  */
 public final class Panel extends WPanel {
 
+	/**
+	 * The attribute name for storing the {@code visible} {@link Lazy}
+	 * value.
+	 */
 	private static final String VISIBLE_ATTRIBUTE = "Panel.visible";
-	
+
+	/**
+	 * The attribute name for storing the {@code hidden} {@link Lazy} value.
+	 */
 	private static final String HIDDEN_ATTRIBUTE = "Panel.hidden";
 	/**
 	 * The available panel types.
@@ -28,17 +35,18 @@ public final class Panel extends WPanel {
 		 */
 		BOX(WPanel.Type.BOX),
 		/**
-		 * The feature panel is highlighted by a background colour and border.
+		 * The feature panel is highlighted by a background colour and
+		 * border.
 		 */
 		FEATURE(WPanel.Type.FEATURE),
 		/**
-		 * The footer panel is only intended for use at the very bottom of an
-		 * application.
+		 * The footer panel is only intended for use at the very bottom
+		 * of an application.
 		 */
 		FOOTER(WPanel.Type.FOOTER),
 		/**
-		 * The header panel is only intended for use at the very top of an
-		 * application.
+		 * The header panel is only intended for use at the very top
+		 * of an application.
 		 */
 		HEADER(WPanel.Type.HEADER);
 

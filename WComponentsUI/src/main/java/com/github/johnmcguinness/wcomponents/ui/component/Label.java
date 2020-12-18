@@ -16,5 +16,13 @@ import com.github.bordertech.wcomponents.WLabel;
  * @author John McGuinness
  */
 public final class Label extends WLabel {
+
+	public static Label label(String text) {
+		return new Label(text);
+	}
+
+	private Label(final String label) {
+		super(label);
+	}
     
 }

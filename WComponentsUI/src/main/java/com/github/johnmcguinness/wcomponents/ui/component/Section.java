@@ -15,39 +15,10 @@ public final class Section extends WSection {
 	private static final String HIDDEN_ATTRIBUTE = "Section.hidden";
 
 	/**
-	 * The available types of section mode.
-	 */
-	public enum Mode {
-		/**
-		 * A lazy section will load its content via AJAX when it is made visible.
-		 */
-		LAZY(WSection.SectionMode.LAZY),
-		/**
-		 * An eager section will load its content via AJAX immediately after the
-		 * page is loaded.
-		 */
-		EAGER(WSection.SectionMode.EAGER),
-		/**
-		 * An section with no mode does not load its content via AJAX.
-		 */
-		NONE(null);
-
-		private final WSection.SectionMode mode;
-
-		Mode(final WSection.SectionMode mode) {
-			this.mode = mode;
-		}
-
-		public WSection.SectionMode mode() {
-			return this.mode;
-		}
-	};
-
-	/**
-	 * Creates a WPanel and applies all of the provided properties.
+	 * Creates a Section and applies all of the provided properties.
 	 *
-	 * @param props the properties to be applied to this Panel.
-	 * @return a WPanel with properties applied.
+	 * @param props the properties to be applied to this Section.
+	 * @return a Section with properties applied.
 	 */
 	public static Section section(final Section.PropertySetter... props) {
 		final Section panel = new Section();

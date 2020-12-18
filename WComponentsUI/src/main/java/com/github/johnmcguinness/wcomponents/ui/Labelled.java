@@ -17,7 +17,7 @@ import com.github.johnmcguinness.wcomponents.ui.component.Label;
  */
 public interface Labelled {
 
-    public void setLabel(String label);
+    void setLabel(String label);
     
-    public void setLabel(Label label);
+    void setLabel(Label label);
 }

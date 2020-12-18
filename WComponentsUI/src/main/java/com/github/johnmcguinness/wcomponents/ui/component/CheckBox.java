@@ -5,17 +5,26 @@ import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.stream.Stream;
 
 /**
- * A declarative API for declaring a CheckBox.
- * 
+ * A declarative API for creating a CheckBox.
+ *
  * @author John McGuinness
  */
 public final class CheckBox extends WCheckBox {
 
-	private static final String DISABLED_ATTRIBUTE = "CheckBox.disabled";	
+	/**
+	 * The attribute name for storing the {@code disabled} {@link Lazy} value.
+	 */
+	private static final String DISABLED_ATTRIBUTE = "CheckBox.disabled";
 
-	private static final String MANDATORY_ATTRIBUTE = "CheckBox.mandatory";	
+	/**
+	 * The attribute name for storing the {@code mandatory} {@link Lazy} value.
+	 */
+	private static final String MANDATORY_ATTRIBUTE = "CheckBox.mandatory";
 
-	private static final String READONLY_ATTRIBUTE = "CheckBox.readonly";	
+	/**
+	 * The attribute name for storing the {@code readonly} {@link Lazy} value.
+	 */
+	private static final String READONLY_ATTRIBUTE = "CheckBox.readonly";
 
 	/**
 	 * Creates a CheckBox and applies all of the provided properties.
@@ -28,13 +37,14 @@ public final class CheckBox extends WCheckBox {
 		Stream.of(props).forEach(prop -> prop.apply(checkbox));
 		return checkbox;
 	}
-	
-	private CheckBox() { }
-	
+
+	private CheckBox() {
+	}
+
 	public void setDisabled() {
 		setDisabled(true);
 	}
-	
+
 	public void setDisabled(final Lazy<Boolean> disabled) {
 		setAttribute(DISABLED_ATTRIBUTE, disabled);
 	}
@@ -44,17 +54,19 @@ public final class CheckBox extends WCheckBox {
 		final Lazy<Boolean> lazy = (Lazy<Boolean>) getAttribute(DISABLED_ATTRIBUTE);
 		return lazy == null ? super.isDisabled() : Boolean.TRUE.equals(lazy.get());
 	}
-	
+
 	public void setMandatory(final Lazy<Boolean> mandatory) {
 		setAttribute(MANDATORY_ATTRIBUTE, mandatory);
 	}
 
 	@Override
 	public boolean isMandatory() {
-		final Lazy<Boolean> lazy = (Lazy<Boolean>) getAttribute(MANDATORY_ATTRIBUTE);
-		return lazy == null ? super.isMandatory() : Boolean.TRUE.equals(lazy.get());
+		final Lazy<Boolean> lazy
+			= (Lazy<Boolean>) getAttribute(MANDATORY_ATTRIBUTE);
+		return lazy == null
+			? super.isMandatory() : Boolean.TRUE.equals(lazy.get());
 	}
-	
+
 	public void setReadOnly(final Lazy<Boolean> readonly) {
 		setAttribute(READONLY_ATTRIBUTE, readonly);
 	}
@@ -67,7 +79,7 @@ public final class CheckBox extends WCheckBox {
 
 	/**
 	 * Applies a property to a {@link CheckBox}.
-	 * 
+	 *
 	 * @author John McGuinness
 	 */
 	public interface PropertySetter {

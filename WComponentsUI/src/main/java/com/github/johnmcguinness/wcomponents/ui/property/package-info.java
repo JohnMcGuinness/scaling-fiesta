@@ -1,4 +1,5 @@
 /**
- * Contains the declarative versions of properties for components of the WComponent framework.
+ * Contains the declarative versions of properties for components of the
+ * WComponent framework.
  */
-package com.github.bordertech.wcomponents.ui.property;
+package com.github.johnmcguinness.wcomponents.ui.property;

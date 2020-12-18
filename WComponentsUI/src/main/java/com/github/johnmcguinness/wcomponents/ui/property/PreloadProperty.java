@@ -1,7 +1,7 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.johnmcguinness.wcomponents.ui.component.Audio;
-import com.github.johnmcguinness.wcomponents.ui.component.MediaPreload;
+import com.github.johnmcguinness.wcomponents.ui.MediaPreload;
 
 /**
  *
@@ -14,7 +14,7 @@ public final class PreloadProperty implements Property<MediaPreload>, Audio.Prop
 	public static PreloadProperty preload(final MediaPreload value) {
 		return new PreloadProperty(value);
 	}
-	
+
 	private PreloadProperty(final MediaPreload value) {
 		this.value = value;
 	}

@@ -6,6 +6,7 @@ import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.stream.Stream;
 
 /**
+ * A declarative API for creating a Button.
  *
  * @author John McGuinness
  */
@@ -14,7 +15,7 @@ public final class Button extends WButton {
 	private static final String AJAX_TARGET_ATTRIBUTE = "Button.ajaxTarget";
 
 	private static final String DISABLED_ATTRIBUTE = "Button.disabled";
-	
+
 	/**
 	 * Creates a Button and applies all of the provided properties.
 	 *
@@ -41,7 +42,8 @@ public final class Button extends WButton {
 		return button;
 	}
 
-	private Button() { }
+	private Button() {
+	}
 
 	public void setAjaxTarget(final Lazy<AjaxTarget> ajaxTarget) {
 		setAttribute(AJAX_TARGET_ATTRIBUTE, ajaxTarget);
