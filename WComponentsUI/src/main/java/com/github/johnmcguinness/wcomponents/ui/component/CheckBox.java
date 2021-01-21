@@ -1,3 +1,12 @@
+//  _ _ _  ___                                         _        _ _  _
+// | | | ||  _] ___  _ _ _  ___  ___  _ _  ___  _ _  _| |_  ___| | || |
+// | | | || [__/ . \| ' ' || . \/ . \| ' |/ ._]| ' |  | |  [_-[| | || |
+// |__/_/ `___/\___/|_|_|_||  _/\___/|_|_|\___.|_|_|  |_|  /__/ \__||_|
+//                         |_|
+//
+//  WComponentsUI provides a declarative API for creating WComponents web
+//  applications.
+//
 package com.github.johnmcguinness.wcomponents.ui.component;
 
 import com.github.bordertech.wcomponents.WCheckBox;
@@ -41,10 +50,11 @@ public final class CheckBox extends WCheckBox {
 	private CheckBox() {
 	}
 
-	public void setDisabled() {
-		setDisabled(true);
-	}
-
+	/**
+	 * A {@link Lazy} value that indicates whether this check box is disabled.
+	 *
+	 * @param disabled The {@link Lazy} value that is evaluated to determine if the check box is disabled.
+	 */
 	public void setDisabled(final Lazy<Boolean> disabled) {
 		setAttribute(DISABLED_ATTRIBUTE, disabled);
 	}
@@ -55,18 +65,36 @@ public final class CheckBox extends WCheckBox {
 		return lazy == null ? super.isDisabled() : Boolean.TRUE.equals(lazy.get());
 	}
 
+	@Override
+	public void setMandatory(final boolean mandatory) {
+		setMandatory(() -> mandatory);
+	}
+
+	/**
+	 * A {@link Lazy} value that indicates whether this check box is mandatory.
+	 *
+	 * @param mandatory The {@link Lazy} value that is evaluated to determine if the check box is mandatory.
+	 */
 	public void setMandatory(final Lazy<Boolean> mandatory) {
 		setAttribute(MANDATORY_ATTRIBUTE, mandatory);
 	}
 
 	@Override
 	public boolean isMandatory() {
-		final Lazy<Boolean> lazy
-			= (Lazy<Boolean>) getAttribute(MANDATORY_ATTRIBUTE);
-		return lazy == null
-			? super.isMandatory() : Boolean.TRUE.equals(lazy.get());
+		final Lazy<Boolean> lazy = (Lazy<Boolean>) getAttribute(MANDATORY_ATTRIBUTE);
+		return lazy == null ? super.isMandatory() : Boolean.TRUE.equals(lazy.get());
 	}
 
+	@Override
+	public void setReadOnly(final boolean readonly) {
+		setReadOnly(() -> readonly);
+	}
+
+	/**
+	 * A {@link Lazy} value that indicates whether this check box is read only.
+	 *
+	 * @param readonly The {@link Lazy} value that is evaluated to determine if the check box is read only.
+	 */
 	public void setReadOnly(final Lazy<Boolean> readonly) {
 		setAttribute(READONLY_ATTRIBUTE, readonly);
 	}

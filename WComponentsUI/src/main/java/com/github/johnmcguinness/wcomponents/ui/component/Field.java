@@ -13,6 +13,7 @@ import com.github.bordertech.wcomponents.WComponent;
 import java.util.Objects;
 
 /**
+ * A {@link Field} consists of a label and the component which is labeled.
  *
  * @author John McGuinness
  */
@@ -20,20 +21,48 @@ public final class Field {
 
 	private final Label label;
 
-	private final WComponent labelled;
+	private final WComponent labeled;
 
-	public Field(final Label label, final WComponent labelled) {
-		this.label = Objects.requireNonNull(label);
-		this.labelled = Objects.requireNonNull(labelled);
+	/**
+	 * Creates a {@link Field} using the {@link String} to create a {@link Label} and the {@link WComponent} to label.
+	 *
+	 * @param label the field's label.
+	 * @param labeled the component which is being labeled.
+	 *
+	 * @return the new {@link Field} instance.
+	 */
+	public static Field field(final String label, final WComponent labeled) {
+		return field(Label.label(label), labeled);
 	}
 
+	/**
+	 * Creates a {@link Field} using the {@link Label} and the {@link WComponent} to label.
+	 *
+	 * @param label the field's label.
+	 * @param labeled the component which is being labeled.
+	 *
+	 * @return the new {@link Field} instance.
+	 */
+	public static Field field(final Label label, final WComponent labeled) {
+		return new Field(label, labeled);
+	}
+
+	private Field(final Label label, final WComponent labelled) {
+		this.label = Objects.requireNonNull(label);
+		this.labeled = Objects.requireNonNull(labelled);
+	}
+
+	/**
+	 * @return the field's label.
+	 */
 	public Label label() {
 		return this.label;
 	}
 
-	public WComponent labelled() {
-		return this.labelled;
+	/**
+	 * @return the component that is labeled.
+	 */
+	public WComponent labeled() {
+		return this.labeled;
 	}
 }
-
-

@@ -7,8 +7,8 @@ import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
  * @author John McGuinness
  */
 public final class LabelWidthProperty
-	extends IntProperty
-	implements FieldLayout.PropertySetter {
+		extends IntProperty
+		implements FieldLayout.PropertySetter {
 
 	public static LabelWidthProperty labelWidth(final int value) {
 		return new LabelWidthProperty(value);

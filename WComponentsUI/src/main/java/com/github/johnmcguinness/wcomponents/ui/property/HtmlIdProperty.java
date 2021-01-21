@@ -4,7 +4,6 @@ import com.github.johnmcguinness.wcomponents.ui.component.CheckBoxGroup;
 import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
 import com.github.johnmcguinness.wcomponents.ui.component.FieldSet;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
-import com.github.johnmcguinness.wcomponents.ui.component.ProgressBar;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
 
 /**
@@ -13,21 +12,15 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  */
 public final class HtmlIdProperty
 	extends StringProperty
-	implements ProgressBar.PropertySetter, CheckBoxGroup.PropertySetter,
-        Panel.PropertySetter, Section.PropertySetter, FieldSet.PropertySetter,
-        FieldLayout.PropertySetter {
-	
+	implements CheckBoxGroup.PropertySetter, Panel.PropertySetter,
+		Section.PropertySetter, FieldSet.PropertySetter, FieldLayout.PropertySetter {
+
 	public static HtmlIdProperty htmlId(final String value) {
 		return new HtmlIdProperty(value);
 	}
 
 	private HtmlIdProperty(final String value) {
 		super(value);
-	}
-
-	@Override
-	public void apply(final ProgressBar progressBar) {
-		progressBar.setHtmlId(value());
 	}
 
 	@Override

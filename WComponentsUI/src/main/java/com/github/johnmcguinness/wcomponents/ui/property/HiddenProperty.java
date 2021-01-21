@@ -12,9 +12,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class HiddenProperty
-	extends LazyBooleanProperty
-	implements CheckBoxGroup.PropertySetter, ProgressBar.PropertySetter,
-        Section.PropertySetter, FieldLayout.PropertySetter, Panel.PropertySetter {
+		extends LazyBooleanProperty
+		implements CheckBoxGroup.PropertySetter, ProgressBar.PropertySetter,
+		Section.PropertySetter, FieldLayout.PropertySetter, Panel.PropertySetter {
 
 	public static HiddenProperty hidden() {
 		return hidden(true);

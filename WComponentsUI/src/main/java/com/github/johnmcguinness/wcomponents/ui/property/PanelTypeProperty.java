@@ -5,16 +5,19 @@ import java.util.Objects;
 
 /**
  * Declares the type of a {@link Panel}.
- * 
+ *
  * @author John McGuinness
  */
 public final class PanelTypeProperty implements Property<Panel.Type>, Panel.PropertySetter {
 
-	/** The value of this property. */
+	/**
+	 * The value of this property.
+	 */
 	private final Panel.Type value;
 
 	/**
 	 * Creates an instance of a {@link PanelTypeProperty}.
+	 *
 	 * @param value the value of this {@link Panel.Type}.
 	 * @return an new instance of {@link PanelTypeProperty}.
 	 */
@@ -39,7 +42,7 @@ public final class PanelTypeProperty implements Property<Panel.Type>, Panel.Prop
 	@Override
 	public boolean equals(final Object obj) {
 		return obj instanceof PanelTypeProperty && Objects.equals(this.value, ((PanelTypeProperty) obj).value);
-	}	
+	}
 
 	@Override
 	public int hashCode() {

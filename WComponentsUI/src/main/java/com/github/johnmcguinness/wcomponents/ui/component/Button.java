@@ -1,3 +1,12 @@
+//  _ _ _  ___                                         _        _ _  _
+// | | | ||  _] ___  _ _ _  ___  ___  _ _  ___  _ _  _| |_  ___| | || |
+// | | | || [__/ . \| ' ' || . \/ . \| ' |/ ._]| ' |  | |  [_-[| | || |
+// |__/_/ `___/\___/|_|_|_||  _/\___/|_|_|\___.|_|_|  |_|  /__/ \__||_|
+//                         |_|
+//
+//  WComponentsUI provides a declarative API for creating WComponents web
+//  applications.
+//
 package com.github.johnmcguinness.wcomponents.ui.component;
 
 import com.github.bordertech.wcomponents.AjaxTarget;
@@ -12,8 +21,14 @@ import java.util.stream.Stream;
  */
 public final class Button extends WButton {
 
+	/**
+	 * The attribute name for storing the {@code ajaxTarget} {@link Lazy} value.
+	 */
 	private static final String AJAX_TARGET_ATTRIBUTE = "Button.ajaxTarget";
 
+	/**
+	 * The attribute name for storing the {@code disabled} {@link Lazy} value.
+	 */
 	private static final String DISABLED_ATTRIBUTE = "Button.disabled";
 
 	/**
@@ -45,6 +60,16 @@ public final class Button extends WButton {
 	private Button() {
 	}
 
+	@Override
+	public void setAjaxTarget(final AjaxTarget ajaxTarget) {
+		setAjaxTarget(() -> ajaxTarget);
+	}
+
+	/**
+	 * Indicate using a {@link Lazy} value the AJAX target for the button.
+	 *
+	 * @param ajaxTarget The {@link Lazy} value that is evaluated to retrieve the ajaxTarget.
+	 */
 	public void setAjaxTarget(final Lazy<AjaxTarget> ajaxTarget) {
 		setAttribute(AJAX_TARGET_ATTRIBUTE, ajaxTarget);
 	}
@@ -55,6 +80,11 @@ public final class Button extends WButton {
 		return ajaxTarget == null ? super.getAjaxTarget() : ajaxTarget.get();
 	}
 
+	/**
+	 * A {@link Lazy} value that indicates whether this button is disabled.
+	 *
+	 * @param disabled The {@link Lazy} value that is evaluated to determine if the button is disabled.
+	 */
 	public void setDisabled(final Lazy<Boolean> disabled) {
 		setAttribute(DISABLED_ATTRIBUTE, disabled);
 	}

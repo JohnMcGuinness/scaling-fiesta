@@ -21,7 +21,7 @@ public final class RenderAsLinkProperty implements Property<Boolean>, Button.Pro
 	private RenderAsLinkProperty(final Boolean value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public Boolean value() {
 		return this.value;

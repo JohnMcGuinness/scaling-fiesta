@@ -10,9 +10,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class ValidateProperty
-	extends BooleanProperty
-	implements Panel.PropertySetter, Section.PropertySetter,
-	FieldSet.PropertySetter, FieldLayout.PropertySetter {
+		extends BooleanProperty
+		implements Panel.PropertySetter, Section.PropertySetter,
+		FieldSet.PropertySetter, FieldLayout.PropertySetter {
 
 	public static ValidateProperty validate(final boolean value) {
 		return new ValidateProperty(value);

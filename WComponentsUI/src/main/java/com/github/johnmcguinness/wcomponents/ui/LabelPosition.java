@@ -12,8 +12,7 @@ package com.github.johnmcguinness.wcomponents.ui;
 import com.github.bordertech.wcomponents.WFieldLayout;
 
 /**
- * Used by FieldLayout to indicate where its field's labels should
- * be positioned.
+ * Used by {@link FieldLayout} to indicate where its field's labels should be positioned.
  *
  * @author John McGuinness
  */
@@ -24,8 +23,7 @@ public enum LabelPosition {
 	 */
 	ABOVE(WFieldLayout.LAYOUT_STACKED),
 	/**
-	 * The label will be positioned to the side (usually to the left) of the
-	 * labeled component.
+	 * The label will be positioned to the side (usually to the left) of the labeled component.
 	 */
 	BESIDE(WFieldLayout.LAYOUT_FLAT);
 
@@ -35,8 +33,7 @@ public enum LabelPosition {
 	private final String layoutValue;
 
 	/**
-	 * Create a {@link LabelPosition} indicating what the equivalent
-	 * {@link String} value in {@link WFieldLayout} is.
+	 * Create a {@link LabelPosition} indicating what the equivalent {@link String} value in {@link WFieldLayout} is.
 	 *
 	 * @param value the {@link String} value from {@link WFieldLayout}.
 	 */
@@ -45,8 +42,7 @@ public enum LabelPosition {
 	}
 
 	/**
-	 * Convert from the {@link LabelPosition} int value to the equivalent
-	 * {@link WFieldLayout} value.
+	 * Convert from the {@link LabelPosition} int value to the equivalent {@link WFieldLayout} value.
 	 *
 	 * @return the {@link WFieldLayout} layout string value.
 	 */

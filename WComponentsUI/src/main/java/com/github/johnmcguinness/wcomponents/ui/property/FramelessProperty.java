@@ -15,7 +15,7 @@ public final class FramelessProperty extends BooleanProperty implements CheckBox
 	public static FramelessProperty frameless(final boolean value) {
 		return new FramelessProperty(value);
 	}
-	
+
 	private FramelessProperty(final Boolean value) {
 		super(value);
 	}

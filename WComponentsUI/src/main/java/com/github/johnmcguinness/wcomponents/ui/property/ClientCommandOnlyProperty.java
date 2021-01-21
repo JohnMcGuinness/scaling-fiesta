@@ -11,7 +11,7 @@ public final class ClientCommandOnlyProperty extends BooleanProperty implements 
 	public static ClientCommandOnlyProperty clientCommandOnly(final boolean value) {
 		return new ClientCommandOnlyProperty(value);
 	}
-	
+
 	private ClientCommandOnlyProperty(final Boolean value) {
 		super(value);
 	}

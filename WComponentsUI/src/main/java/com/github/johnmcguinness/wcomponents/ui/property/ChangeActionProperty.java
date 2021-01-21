@@ -15,7 +15,7 @@ public final class ChangeActionProperty implements Property<Action>, CheckBox.Pr
 	public static ChangeActionProperty onChange(final Action action) {
 		return new ChangeActionProperty(action);
 	}
-	
+
 	private ChangeActionProperty(final Action value) {
 		this.value = value;
 	}

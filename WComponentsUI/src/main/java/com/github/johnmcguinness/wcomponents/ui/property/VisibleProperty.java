@@ -12,9 +12,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class VisibleProperty extends LazyBooleanProperty
-	implements Panel.PropertySetter, ProgressBar.PropertySetter,
-        CheckBoxGroup.PropertySetter, Section.PropertySetter,
-        FieldLayout.PropertySetter {
+		implements Panel.PropertySetter, ProgressBar.PropertySetter,
+		CheckBoxGroup.PropertySetter, Section.PropertySetter,
+		FieldLayout.PropertySetter {
 
 	public static VisibleProperty visible() {
 		return visible(true);

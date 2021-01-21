@@ -20,7 +20,7 @@ public final class ClickActionProperty implements Property<Action>, Button.Prope
 	}
 
 	public static ClickActionProperty onClick(final WValidationErrors errors, final WComponent validationTarget, final Action action) {
-		
+
 		return onClick(new ValidatingAction(errors, validationTarget) {
 			@Override
 			public void executeOnValid(final ActionEvent event) {
@@ -28,7 +28,7 @@ public final class ClickActionProperty implements Property<Action>, Button.Prope
 			}
 		});
 	}
-	
+
 	public ClickActionProperty validating(final WComponent validationTarget, final WValidationErrors errors) {
 		return onClick(new ValidatingAction(errors, validationTarget) {
 			@Override
@@ -37,7 +37,7 @@ public final class ClickActionProperty implements Property<Action>, Button.Prope
 			}
 		});
 	}
-	
+
 	private ClickActionProperty(final Action value) {
 		this.value = value;
 	}

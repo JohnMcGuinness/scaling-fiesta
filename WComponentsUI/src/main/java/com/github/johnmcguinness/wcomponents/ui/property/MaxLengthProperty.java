@@ -11,7 +11,7 @@ public final class MaxLengthProperty extends IntProperty implements TextInput.Pr
 	public static MaxLengthProperty maxLegth(final int value) {
 		return new MaxLengthProperty(value);
 	}
-	
+
 	private MaxLengthProperty(final int value) {
 		super(value);
 	}

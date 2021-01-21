@@ -11,7 +11,7 @@ public final class ColumnsProperty extends IntProperty implements TextInput.Prop
 	public static ColumnsProperty columns(final int value) {
 		return new ColumnsProperty(value);
 	}
-	
+
 	private ColumnsProperty(final int value) {
 		super(value);
 	}

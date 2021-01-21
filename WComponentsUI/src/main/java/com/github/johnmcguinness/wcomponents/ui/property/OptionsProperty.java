@@ -20,11 +20,11 @@ public final class OptionsProperty<T> implements Property<List<T>>, CheckBoxGrou
 	public static <T> OptionsProperty options(final List<T> options) {
 		return new OptionsProperty(options);
 	}
-	
+
 	private OptionsProperty(final List<T> value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public List<T> value() {
 		return this.value;

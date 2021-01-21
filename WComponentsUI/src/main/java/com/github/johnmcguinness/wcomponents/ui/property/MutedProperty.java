@@ -15,7 +15,7 @@ public final class MutedProperty extends BooleanProperty implements Audio.Proper
 	public MutedProperty muted(final boolean value) {
 		return new MutedProperty(value);
 	}
-	
+
 	private MutedProperty(final Boolean value) {
 		super(value);
 	}

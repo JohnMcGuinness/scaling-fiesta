@@ -1,3 +1,12 @@
+//  _ _ _  ___                                         _        _ _  _
+// | | | ||  _] ___  _ _ _  ___  ___  _ _  ___  _ _  _| |_  ___| | || |
+// | | | || [__/ . \| ' ' || . \/ . \| ' |/ ._]| ' |  | |  [_-[| | || |
+// |__/_/ `___/\___/|_|_|_||  _/\___/|_|_|\___.|_|_|  |_|  /__/ \__||_|
+//                         |_|
+//
+//  WComponentsUI provides a declarative API for creating WComponents web
+//  applications.
+//
 package com.github.johnmcguinness.wcomponents.ui.component;
 
 import com.github.bordertech.wcomponents.WFieldSet;
@@ -56,6 +65,11 @@ public final class FieldSet extends WFieldSet {
 			this.value = value;
 		}
 
+		/**
+		 * Converts this {@link FrameType} to a {@link WFieldSet.FrameType}.
+		 *
+		 * @return the converted value.
+		 */
 		public WFieldSet.FrameType convert() {
 			return this.value;
 		}
@@ -80,8 +94,13 @@ public final class FieldSet extends WFieldSet {
 		super((String) null);
 	}
 
-	public void setMandatory(final Lazy<Boolean> visible) {
-		setAttribute(MANDATORY_ATTRIBUTE, visible);
+	/**
+	 * A {@link Lazy} value that indicates whether this fieldset is mandatory.
+	 *
+	 * @param mandatory The {@link Lazy} value that is evaluated to determine if the fieldset is mandatory.
+	 */
+	public void setMandatory(final Lazy<Boolean> mandatory) {
+		setAttribute(MANDATORY_ATTRIBUTE, mandatory);
 	}
 
 	@Override
@@ -98,6 +117,11 @@ public final class FieldSet extends WFieldSet {
 		setVisible(() -> visible);
 	}
 
+	/**
+	 * A {@link Lazy} value that indicates whether this fieldset is visible.
+	 *
+	 * @param visible The {@link Lazy} value that is evaluated to determine if the fieldset is visible.
+	 */
 	public void setVisible(final Lazy<Boolean> visible) {
 		setAttribute(VISIBLE_ATTRIBUTE, visible);
 	}
@@ -130,7 +154,7 @@ public final class FieldSet extends WFieldSet {
 		final Lazy<Boolean> isHidden
 			= (Lazy<Boolean>) getAttribute(HIDDEN_ATTRIBUTE);
 		return isHidden == null
-			? super.isVisible()
+			? super.isHidden()
 			: Boolean.TRUE.equals(isHidden.get());
 	}
 

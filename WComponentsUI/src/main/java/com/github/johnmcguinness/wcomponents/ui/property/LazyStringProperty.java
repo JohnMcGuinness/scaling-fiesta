@@ -4,13 +4,13 @@ import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.Objects;
 
 /**
- * 
+ *
  * @author John McGuinness
  */
 public abstract class LazyStringProperty implements Property<Lazy<String>> {
 
 	private final Lazy<String> value;
-	
+
 	protected LazyStringProperty(final Lazy<String> value) {
 		this.value = value;
 	}

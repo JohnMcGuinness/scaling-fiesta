@@ -13,7 +13,7 @@ public abstract class BooleanProperty implements Property<Boolean> {
 	protected BooleanProperty(final Boolean value) {
 		this.value = Boolean.TRUE.equals(value);
 	}
-	
+
 	@Override
 	public final Boolean value() {
 		return this.value;

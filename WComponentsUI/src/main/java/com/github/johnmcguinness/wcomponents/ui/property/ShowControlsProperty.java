@@ -15,7 +15,7 @@ public final class ShowControlsProperty extends BooleanProperty implements Audio
 	public ShowControlsProperty showControls(final boolean value) {
 		return new ShowControlsProperty(value);
 	}
-	
+
 	private ShowControlsProperty(final Boolean value) {
 		super(value);
 	}

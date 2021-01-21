@@ -11,19 +11,19 @@ import com.github.johnmcguinness.wcomponents.ui.component.TextInput;
  * @author John McGuinness
  * @param <T> the type of the component being referenced.
  */
-public final class ReferenceProperty<T extends WComponent> implements Property<Ref<T>>, 
-	Panel.PropertySetter, TextInput.PropertySetter, Button.PropertySetter {
+public final class ReferenceProperty<T extends WComponent> implements Property<Ref<T>>,
+		Panel.PropertySetter, TextInput.PropertySetter, Button.PropertySetter {
 
 	private final Ref<T> value;
-	
-	public static <T extends WComponent> ReferenceProperty<T> ref(final Ref<T> component) {
-		return new ReferenceProperty<>(component);
+
+	public static <T extends WComponent> ReferenceProperty<T> ref(final Ref<T> ref) {
+		return new ReferenceProperty<>(ref);
 	}
-	
-	private ReferenceProperty(final Ref<T> value) {
-		this.value = value;
+
+	private ReferenceProperty(final Ref<T> ref) {
+		this.value = ref;
 	}
-	
+
 	/**
 	 *
 	 * @return the value of the property.

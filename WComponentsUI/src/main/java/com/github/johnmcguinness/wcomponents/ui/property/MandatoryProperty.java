@@ -9,9 +9,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.TextInput;
  *
  * @author John McGuinness
  */
-public final class MandatoryProperty extends BooleanProperty implements 
-	TextInput.PropertySetter, PasswordInput.PropertySetter, CheckBox.PropertySetter,
-	CheckBoxGroup.PropertySetter {
+public final class MandatoryProperty extends BooleanProperty implements
+		TextInput.PropertySetter, PasswordInput.PropertySetter, CheckBox.PropertySetter,
+		CheckBoxGroup.PropertySetter {
 
 	public static MandatoryProperty mandatory() {
 		return mandatory(true);

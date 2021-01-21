@@ -7,25 +7,28 @@ import java.util.Objects;
 
 /**
  * Declares the mode of a {@link Panel}.
- * 
+ *
  * @author John McGuinness
  */
 public final class ModeProperty implements Property<Mode>, Panel.PropertySetter, Section.PropertySetter {
 
-	/** The value of this property. */
+	/**
+	 * The value of this property.
+	 */
 	private final Mode value;
 
 	/**
 	 * Creates an instance of a {@link ModeProperty}.
+	 *
 	 * @param value the value of this {@link Mode}.
 	 * @return an newly constructed {@link ModeProperty}.
 	 */
 	public static ModeProperty mode(final Mode value) {
-		return new ModeProperty(Objects.requireNonNull(value, "value is null"));
+		return new ModeProperty(value);
 	}
 
 	private ModeProperty(final Mode value) {
-		this.value = value;
+		this.value = value == null ? Mode.NONE : value;
 	}
 
 	@Override

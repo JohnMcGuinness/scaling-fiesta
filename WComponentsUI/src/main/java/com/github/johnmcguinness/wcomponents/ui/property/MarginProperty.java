@@ -12,8 +12,8 @@ import com.github.johnmcguinness.wcomponents.ui.component.Section;
  * @author John McGuinness
  */
 public final class MarginProperty
-	implements Property<Margin>, Panel.PropertySetter, FieldSet.PropertySetter,
-	Section.PropertySetter, FieldLayout.PropertySetter {
+		implements Property<Margin>, Panel.PropertySetter, FieldSet.PropertySetter,
+		Section.PropertySetter, FieldLayout.PropertySetter {
 
 	private final Margin value;
 
@@ -32,7 +32,7 @@ public final class MarginProperty
 	public static MarginProperty margin(final Size top, final Size left, final Size bottom, final Size right) {
 		return new MarginProperty(new Margin(top, right, bottom, left));
 	}
-	
+
 	private MarginProperty(final Margin value) {
 		this.value = value;
 	}

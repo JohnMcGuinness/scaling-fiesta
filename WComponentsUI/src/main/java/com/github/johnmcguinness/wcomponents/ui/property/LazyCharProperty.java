@@ -14,7 +14,7 @@ public abstract class LazyCharProperty implements Property<Lazy<Character>> {
 	protected LazyCharProperty(final Lazy<Character> value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public final Lazy<Character> value() {
 		return this.value;

@@ -13,11 +13,12 @@ public final class Ref<T extends WComponent> implements Serializable {
 	public static <T extends WComponent> Ref<T> create() {
 		return new Ref<>();
 	}
-	
+
 	private T current;
-	
-	private Ref() { }
-	
+
+	private Ref() {
+	}
+
 	public T current() {
 		checkInitialised();
 		return this.current;
@@ -25,17 +26,17 @@ public final class Ref<T extends WComponent> implements Serializable {
 
 	public void current(final T component) {
 		checkNotInitialised();
-		this.current = component;	
+		this.current = component;
 	}
 
 	private void checkInitialised() {
-		if (this.current == null) { 
+		if (this.current == null) {
 			throw new IllegalStateException("This ref has not been initialised.");
 		}
 	}
 
 	private void checkNotInitialised() {
-		if (this.current != null) { 
+		if (this.current != null) {
 			throw new IllegalStateException("Attempting to reinitialise a ref.");
 		}
 	}

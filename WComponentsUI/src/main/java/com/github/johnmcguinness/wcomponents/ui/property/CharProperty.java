@@ -13,7 +13,7 @@ public abstract class CharProperty implements Property<Character> {
 	protected CharProperty(final Character value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public final Character value() {
 		return this.value;

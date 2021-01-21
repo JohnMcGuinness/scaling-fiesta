@@ -13,23 +13,23 @@ import java.util.List;
  * @author john
  */
 public final class ChildrenProperty
-	implements Property<List<WComponent>>,
-	Panel.PropertySetter, FieldSet.PropertySetter, Section.PropertySetter {
+		implements Property<List<WComponent>>,
+		Panel.PropertySetter, FieldSet.PropertySetter, Section.PropertySetter {
 
 	private final List<WComponent> value;
-	
+
 	public static ChildrenProperty children(final WComponent... children) {
 		return new ChildrenProperty(Arrays.asList(children));
 	}
-	
+
 	public static ChildrenProperty children(final List<WComponent> children) {
 		return new ChildrenProperty(children);
 	}
-	
+
 	private ChildrenProperty(final List<WComponent> value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public List<WComponent> value() {
 		return this.value;
@@ -37,7 +37,12 @@ public final class ChildrenProperty
 
 	@Override
 	public void apply(final Panel panel) {
-		value().forEach(panel::add);
+		
+		for(WComponent child : value()) {
+			panel.add(child);
+		}
+		
+//		value().forEach(panel::add);
 	}
 
 	@Override

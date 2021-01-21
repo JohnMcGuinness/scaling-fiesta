@@ -5,16 +5,19 @@ import java.util.Objects;
 
 /**
  * Declares the type of a {@link ProgressBar}.
- * 
+ *
  * @author John McGuinness
  */
 public final class ProgressBarTypeProperty implements Property<ProgressBar.Type>, ProgressBar.PropertySetter {
 
-	/** The value of this property. */
+	/**
+	 * The value of this property.
+	 */
 	private final ProgressBar.Type value;
 
 	/**
 	 * Creates an instance of a {@link ProgressBarTypeProperty}.
+	 *
 	 * @param value the value of this {@link ProgressBar.Type}.
 	 * @return an new instance of {@link ProgressBarTypeProperty}.
 	 */
@@ -39,7 +42,7 @@ public final class ProgressBarTypeProperty implements Property<ProgressBar.Type>
 	@Override
 	public boolean equals(final Object obj) {
 		return obj instanceof ProgressBarTypeProperty && Objects.equals(this.value, ((ProgressBarTypeProperty) obj).value);
-	}	
+	}
 
 	@Override
 	public int hashCode() {

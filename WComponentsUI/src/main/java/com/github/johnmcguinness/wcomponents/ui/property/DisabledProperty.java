@@ -8,14 +8,14 @@ import com.github.johnmcguinness.wcomponents.ui.component.CheckBoxGroup;
  *
  * @author John McGuinness
  */
-public final class DisabledProperty 
-	extends BooleanProperty 
-	implements Button.PropertySetter, CheckBox.PropertySetter, CheckBoxGroup.PropertySetter {
+public final class DisabledProperty
+		extends BooleanProperty
+		implements Button.PropertySetter, CheckBox.PropertySetter, CheckBoxGroup.PropertySetter {
 
 	public static DisabledProperty disabled(final boolean value) {
 		return new DisabledProperty(value);
 	}
-	
+
 	private DisabledProperty(final boolean value) {
 		super(value);
 	}

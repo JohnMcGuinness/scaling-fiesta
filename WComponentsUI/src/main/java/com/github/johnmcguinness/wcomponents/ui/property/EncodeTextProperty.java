@@ -13,7 +13,7 @@ public final class EncodeTextProperty extends BooleanProperty {
 	public EncodeTextProperty encodeText(final boolean value) {
 		return new EncodeTextProperty(value);
 	}
-	
+
 	private EncodeTextProperty(final Boolean value) {
 		super(value);
 	}

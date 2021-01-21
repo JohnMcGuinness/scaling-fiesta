@@ -10,7 +10,7 @@ import com.github.johnmcguinness.wcomponents.ui.component.TextInput;
  * @author John McGuinness
  */
 public final class ReadOnlyProperty extends LazyBooleanProperty
-	implements TextInput.PropertySetter, CheckBox.PropertySetter, CheckBoxGroup.PropertySetter {
+		implements TextInput.PropertySetter, CheckBox.PropertySetter, CheckBoxGroup.PropertySetter {
 
 	public static ReadOnlyProperty readOnly(final boolean value) {
 		return readOnly(() -> value);

@@ -5,7 +5,7 @@ import com.github.bordertech.wcomponents.WSection;
 import com.github.johnmcguinness.wcomponents.ui.component.Section;
 import static com.github.bordertech.wcomponents.WSection.SectionMode;
 import static com.github.johnmcguinness.wcomponents.ui.component.Section.section;
-import static com.github.johnmcguinness.wcomponents.ui.component.Text.text;
+import static com.github.johnmcguinness.wcomponents.ui.component.Text.textContent;
 import static com.github.johnmcguinness.wcomponents.ui.property.ModeProperty.mode;
 import static com.github.johnmcguinness.wcomponents.ui.property.ChildrenProperty.children;
 import static com.github.johnmcguinness.wcomponents.ui.property.HiddenProperty.hidden;
@@ -46,6 +46,8 @@ public class SectionTest extends AbstractWComponentTestCase {
 		assertTrue(section(visible(true)).isVisible());
 		assertFalse(section(visible(false)).isVisible());
 		assertFalse(section(visible(() -> false)).isVisible());
+		assertTrue(section(visible(() -> true)).isVisible());
+		assertFalse(section(visible(() -> null)).isVisible());
 	}
 
 	@Test
@@ -56,11 +58,13 @@ public class SectionTest extends AbstractWComponentTestCase {
 		section.setHidden(false);
 		assertFalse(section.isHidden());
 
-		assertTrue(section().isHidden());
+		assertFalse(section().isHidden());
 		assertTrue(section(hidden()).isHidden());
 		assertFalse(section(hidden(false)).isHidden());
 		assertTrue(section(hidden(true)).isHidden());
 		assertFalse(section(hidden(() -> false)).isHidden());
+		assertTrue(section(hidden(() -> true)).isHidden());
+		assertFalse(section(hidden(() -> null)).isHidden());
 	}
 
 	@Test
@@ -71,8 +75,8 @@ public class SectionTest extends AbstractWComponentTestCase {
 				visible(false),
                 hidden(true),
 				children(
-					text("Hello"),
-					text("Good bye")
+					textContent("Hello"),
+					textContent("Good bye")
 				)
 			);
 

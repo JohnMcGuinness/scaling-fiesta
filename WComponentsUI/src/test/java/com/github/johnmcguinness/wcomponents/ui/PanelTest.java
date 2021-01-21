@@ -45,16 +45,18 @@ public class PanelTest extends AbstractWComponentTestCase {
 	@Test
 	public void testVisibleProperty() {
 
-		final Panel fieldLayout = panel();
+		final Panel panel = panel();
 
-		fieldLayout.setVisible(false);
-		assertFalse(fieldLayout.isVisible());
+		panel.setVisible(false);
+		assertFalse(panel.isVisible());
 
 		assertTrue(panel().isVisible());
 		assertTrue(panel(visible()).isVisible());
 		assertTrue(panel(visible(true)).isVisible());
 		assertFalse(panel(visible(false)).isVisible());
 		assertFalse(panel(visible(() -> false)).isVisible());
+		assertTrue(panel(visible(() -> true)).isVisible());
+		assertFalse(panel(visible(() -> null)).isVisible());
 	}
 
 	@Test
@@ -65,7 +67,7 @@ public class PanelTest extends AbstractWComponentTestCase {
 		panel.setHidden(false);
 		assertFalse(panel.isHidden());
 
-		assertTrue(panel().isHidden());
+		assertFalse(panel().isHidden());
 		assertTrue(panel(hidden()).isHidden());
 		assertFalse(panel(hidden(false)).isHidden());
 		assertTrue(panel(hidden(true)).isHidden());

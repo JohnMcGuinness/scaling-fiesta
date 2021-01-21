@@ -8,9 +8,9 @@ import com.github.johnmcguinness.wcomponents.ui.component.ProgressBar;
  * @author John McGuinness
  */
 public final class HtmlClassProperty
-        extends StringProperty
-        implements ProgressBar.PropertySetter, Panel.PropertySetter {
-	
+		extends StringProperty
+		implements ProgressBar.PropertySetter, Panel.PropertySetter {
+
 	public static HtmlClassProperty htmlClass(final String value) {
 		return new HtmlClassProperty(value);
 	}

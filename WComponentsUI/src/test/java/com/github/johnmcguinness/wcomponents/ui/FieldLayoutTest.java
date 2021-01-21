@@ -6,7 +6,7 @@ import com.github.bordertech.wcomponents.WFieldLayout;
 import com.github.johnmcguinness.wcomponents.ui.component.FieldLayout;
 import static com.github.johnmcguinness.wcomponents.ui.component.FieldLayout.fieldLayout;
 import static com.github.johnmcguinness.wcomponents.ui.component.TextInput.textInput;
-import static com.github.johnmcguinness.wcomponents.ui.property.FieldsProperty.field;
+import static com.github.johnmcguinness.wcomponents.ui.component.Field.field;
 import static com.github.johnmcguinness.wcomponents.ui.property.FieldsProperty.fields;
 import static com.github.johnmcguinness.wcomponents.ui.property.VisibleProperty.visible;
 import static com.github.johnmcguinness.wcomponents.ui.property.HiddenProperty.hidden;

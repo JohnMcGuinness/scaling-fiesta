@@ -36,35 +36,56 @@ public final class FieldLayout extends WFieldLayout {
 	 */
 	private static final String HIDDEN_ATTRIBUTE = "FieldLayout.hidden";
 
-	public static FieldLayout fieldLayout(final LabelPosition position, final PropertySetter... props) {
+	/**
+	 * Creates a {@link FieldLayout} with a label position of {@code position}.
+	 *
+	 * @param labelPosition the position of the {@link FieldLayout}s labels.
+	 * @param props the properties to be applied to a {@link FieldLayout}.
+	 *
+	 * @return the new {@link FieldLayout} instance.
+	 */
+	public static FieldLayout fieldLayout(final LabelPosition labelPosition, final PropertySetter... props) {
 
-		final FieldLayout fieldlayout
-			= position == null
-				? new FieldLayout()
-				: new FieldLayout(position);
-
+		final FieldLayout fieldlayout = labelPosition == null ? new FieldLayout() : new FieldLayout(labelPosition);
 		Stream.of(props).forEach(prop -> prop.apply(fieldlayout));
 		return fieldlayout;
 	}
 
+	/**
+	 * Creates a {@link FieldLayout} with the default label position of {@code LabelPosition.BESIDE}.
+	 *
+	 * @param props the properties to be applied to a {@link FieldLayout}.
+	 *
+	 * @return the new {@link FieldLayout} instance.
+	 */
 	public static FieldLayout fieldLayout(final PropertySetter... props) {
-		final FieldLayout fieldlayout = new FieldLayout();
+		final FieldLayout fieldlayout = new FieldLayout(LabelPosition.BESIDE);
 		Stream.of(props).forEach(prop -> prop.apply(fieldlayout));
 		return fieldlayout;
 	}
 
-	private FieldLayout(final LabelPosition pos) {
-		super(pos.convert());
+	private FieldLayout(final LabelPosition labelPosition) {
+		super(labelPosition.convert());
 	}
 
 	private FieldLayout() {
-		super();
+		this(LabelPosition.BESIDE);
 	}
 
+	/**
+	 * Adds a {@link Field} to this {@link FieldLayout}.
+	 *
+	 * @param field the {@link Field} to be added.
+	 */
 	public void addField(final Field field) {
-		addField(field.label(), field.labelled());
+		addField(field.label(), field.labeled());
 	}
 
+	/**
+	 * Retrieve all of the fields that are contained by this {@link FieldLayout}.
+	 *
+	 * @return an unmodifiable {@link List} of this {@link FieldLayout}s fields.
+	 */
 	public List<WField> getFields() {
 
 		final List<WField> fields = new ArrayList<>();
@@ -78,6 +99,13 @@ public final class FieldLayout extends WFieldLayout {
 		return Collections.unmodifiableList(fields);
 	}
 
+	/**
+	 * Retrieve the {@link WField} in this {@link FieldLayout} with {@code label} as the text of its label.
+	 *
+	 * @param label
+	 * @return the first {@link WField} that has {@code label} as the text of its label, or {@code Optional.empty()} if
+	 * a label with that text is not present.
+	 */
 	public Optional<WField> getField(final String label) {
 
 		return getFields()
@@ -90,6 +118,12 @@ public final class FieldLayout extends WFieldLayout {
 	public void setVisible(final boolean visible) {
 		setVisible(() -> visible);
 	}
+
+	/**
+	 * A {@link Lazy} value that indicates whether this field layout is visible.
+	 *
+	 * @param visible The {@link Lazy} value that is evaluated to determine if the field layout is visible.
+	 */
 
 	public void setVisible(final Lazy<Boolean> visible) {
 		setAttribute(VISIBLE_ATTRIBUTE, visible);
@@ -106,6 +140,11 @@ public final class FieldLayout extends WFieldLayout {
 		setHidden(() -> hidden);
 	}
 
+	/**
+	 * A {@link Lazy} value that indicates whether this field layout is hidden.
+	 *
+	 * @param hidden The {@link Lazy} value that is evaluated to determine if the field layout is hidden.
+	 */
 	public void setHidden(final Lazy<Boolean> hidden) {
 		setAttribute(HIDDEN_ATTRIBUTE, hidden);
 	}

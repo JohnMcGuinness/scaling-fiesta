@@ -20,11 +20,11 @@ public final class SelectedOptionsProperty<T> implements Property<List<T>>, Chec
 	public static <T> SelectedOptionsProperty selectedOptions(final List<T> options) {
 		return new SelectedOptionsProperty(options);
 	}
-	
+
 	private SelectedOptionsProperty(final List<T> value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public List<T> value() {
 		return this.value;

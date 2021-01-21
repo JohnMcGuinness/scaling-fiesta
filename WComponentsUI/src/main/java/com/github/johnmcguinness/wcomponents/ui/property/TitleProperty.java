@@ -6,19 +6,18 @@ import java.util.Objects;
 
 /**
  * Declare the title for a component.
- * 
+ *
  * @author John McGuinness
  */
 public final class TitleProperty
-	implements Property<String>, FieldSet.PropertySetter,
-	FieldLayout.PropertySetter {
+	implements Property<String>, FieldSet.PropertySetter, FieldLayout.PropertySetter {
 
 	private final String value;
 
 	public static TitleProperty title(final String value) {
 		return new TitleProperty(value);
 	}
-	
+
 	private TitleProperty(final String value) {
 		this.value = value;
 	}

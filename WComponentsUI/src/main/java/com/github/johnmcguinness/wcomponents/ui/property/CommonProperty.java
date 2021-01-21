@@ -1,4 +1,4 @@
-package com.github.bordertech.wcomponents.ui.property;
+package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.bordertech.wcomponents.WComponent;
 
@@ -8,6 +8,6 @@ import com.github.bordertech.wcomponents.WComponent;
  * @param <T> the type of the component
  */
 public interface CommonProperty<T extends WComponent> {
-	
+
 	void apply(T component);
 }

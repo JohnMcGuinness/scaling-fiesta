@@ -1,3 +1,12 @@
+//  _ _ _  ___                                         _        _ _  _
+// | | | ||  _] ___  _ _ _  ___  ___  _ _  ___  _ _  _| |_  ___| | || |
+// | | | || [__/ . \| ' ' || . \/ . \| ' |/ ._]| ' |  | |  [_-[| | || |
+// |__/_/ `___/\___/|_|_|_||  _/\___/|_|_|\___.|_|_|  |_|  /__/ \__||_|
+//                         |_|
+//
+//  WComponentsUI provides a declarative API for creating WComponents web
+//  applications.
+//
 package com.github.johnmcguinness.wcomponents.ui.component;
 
 import com.github.bordertech.wcomponents.WSection;
@@ -35,6 +44,11 @@ public final class Section extends WSection {
 		setVisible(() -> visible);
 	}
 
+	/**
+	 * A {@link Lazy} value that indicates whether this section is visible.
+	 *
+	 * @param visible The {@link Lazy} value that is evaluated to determine if the section is visible.
+	 */
 	public void setVisible(final Lazy<Boolean> visible) {
 		setAttribute(VISIBLE_ATTRIBUTE, visible);
 	}
@@ -50,14 +64,19 @@ public final class Section extends WSection {
 		setHidden(() -> hidden);
 	}
 
+	/**
+	 * A {@link Lazy} value that indicates whether this section is hidden.
+	 *
+	 * @param hidden The {@link Lazy} value that is evaluated to determine if the section is hidden.
+	 */
 	public void setHidden(final Lazy<Boolean> hidden) {
 		setAttribute(HIDDEN_ATTRIBUTE, hidden);
 	}
-	
+
 	@Override
 	public boolean isHidden() {
 		final Lazy<Boolean> isHidden = (Lazy<Boolean>) getAttribute(HIDDEN_ATTRIBUTE);
-		return isHidden == null ? super.isVisible() : Boolean.TRUE.equals(isHidden.get());
+		return isHidden == null ? super.isHidden() : Boolean.TRUE.equals(isHidden.get());
 	}
 
 	/**

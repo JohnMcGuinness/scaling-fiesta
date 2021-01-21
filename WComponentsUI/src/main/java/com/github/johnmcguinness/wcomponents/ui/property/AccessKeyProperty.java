@@ -6,17 +6,25 @@ import java.util.Objects;
 
 /**
  * Declares the access key property for components that support accessKey.
- * 
+ *
  * @author John McGuinness
  */
-public final class AccessKeyProperty implements Property<Character>, Button.PropertySetter, Panel.PropertySetter {
+public final class AccessKeyProperty
+	implements Property<Character>, Button.PropertySetter, Panel.PropertySetter {
 
-	private final Character value;
+	private final char value;
 
+	/**
+	 * Creates a {@link AccessKeyProperty} using the provided value.
+	 *
+	 * @param value the {@code char} to use as the access key.
+	 *
+	 * @return a new {@link AccessKeyProperty}.
+	 */
 	public static AccessKeyProperty accessKey(final char value) {
 		return new AccessKeyProperty(value);
 	}
-	
+
 	private AccessKeyProperty(final Character value) {
 		this.value = value;
 	}
@@ -38,7 +46,7 @@ public final class AccessKeyProperty implements Property<Character>, Button.Prop
 
 	@Override
 	public boolean equals(final Object obj) {
-		return obj instanceof AccessKeyProperty && this.value.equals(((AccessKeyProperty) obj).value);
+		return obj instanceof AccessKeyProperty && this.value == ((AccessKeyProperty) obj).value;
 	}
 
 	@Override

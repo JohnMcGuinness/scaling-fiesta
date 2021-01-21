@@ -1,3 +1,12 @@
+//  _ _ _  ___                                         _        _ _  _
+// | | | ||  _] ___  _ _ _  ___  ___  _ _  ___  _ _  _| |_  ___| | || |
+// | | | || [__/ . \| ' ' || . \/ . \| ' |/ ._]| ' |  | |  [_-[| | || |
+// |__/_/ `___/\___/|_|_|_||  _/\___/|_|_|\___.|_|_|  |_|  /__/ \__||_|
+//                         |_|
+//
+//  WComponentsUI provides a declarative API for creating WComponents web
+//  applications.
+//
 package com.github.johnmcguinness.wcomponents.ui.component;
 
 import com.github.bordertech.wcomponents.WAudio;
@@ -5,14 +14,14 @@ import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.stream.Stream;
 
 /**
+ * A declarative API for embedding sound content in a document.
  *
  * @author John McGuinness
  */
 public final class Audio extends WAudio {
 
 	/**
-	 * The attribute name for storing the {@code autoplay}
-	 * {@link Lazy} value.
+	 * The attribute name for storing the {@code autoplay} {@link Lazy} value.
 	 */
 	private static final String AUTOPLAY_ATTRIBUTE = "Audio.autoplay";
 
@@ -20,18 +29,6 @@ public final class Audio extends WAudio {
 	 * The attribute name for storing the {@code loop} {@link Lazy} value.
 	 */
 	private static final String LOOP_ATTRIBUTE = "Audio.loop";
-
-	/**
-	 * The attribute name for storing the {@code muted} {@link Lazy} value.
-	 */
-	private static final String MUTED_ATTRIBUTE = "Audio.muted";
-
-	/**
-	 * The attribute name for storing the {@code renderControls}
-	 * {@link Lazy} value.
-	 */
-	private static final String RENDER_CONTROLS_ATTRIBUTE
-		= "Audio.render_controls";
 
 	/**
 	 * Creates a Audio and applies all of the provided properties.
@@ -50,6 +47,11 @@ public final class Audio extends WAudio {
 		super();
 	}
 
+	/**
+	 * Indicate using a {@link Lazy} value whether the clip should play automatically.
+	 *
+	 * @param autoplay The {@link Lazy} value that is evaluated to determine if the clip should play automatically.
+	 */
 	public void setAutoplay(final Lazy<Boolean> autoplay) {
 		setAttribute(AUTOPLAY_ATTRIBUTE, autoplay);
 	}
@@ -60,6 +62,11 @@ public final class Audio extends WAudio {
 		return autoplay == null ? super.isAutoplay() : Boolean.TRUE.equals(autoplay.get());
 	}
 
+	/**
+	 * Indicate using a {@link Lazy} value whether the audio clip playback should loop or stop at the end.
+	 *
+	 * @param loop The {@link Lazy} value that is evaluated to determine if the clip should loop.
+	 */
 	public void setLoop(final Lazy<Boolean> loop) {
 		setAttribute(LOOP_ATTRIBUTE, loop);
 	}
@@ -68,26 +75,6 @@ public final class Audio extends WAudio {
 	public boolean isLoop() {
 		final Lazy<Boolean> loop = (Lazy<Boolean>) getAttribute(LOOP_ATTRIBUTE);
 		return loop == null ? super.isLoop() : Boolean.TRUE.equals(loop.get());
-	}
-
-	public void setMuted(final Lazy<Boolean> muted) {
-		setAttribute(MUTED_ATTRIBUTE, muted);
-	}
-
-	@Override
-	public boolean isMuted() {
-		final Lazy<Boolean> muted = (Lazy<Boolean>) getAttribute(MUTED_ATTRIBUTE);
-		return muted == null ? super.isMuted() : Boolean.TRUE.equals(muted.get());
-	}
-
-	public void setRenderControls(final Lazy<Boolean> renderControls) {
-		setAttribute(RENDER_CONTROLS_ATTRIBUTE, renderControls);
-	}
-
-	@Override
-	public boolean isRenderControls() {
-		final Lazy<Boolean> renderControls = (Lazy<Boolean>) getAttribute(RENDER_CONTROLS_ATTRIBUTE);
-		return renderControls == null ? super.isRenderControls() : Boolean.TRUE.equals(renderControls.get());
 	}
 
 	/**

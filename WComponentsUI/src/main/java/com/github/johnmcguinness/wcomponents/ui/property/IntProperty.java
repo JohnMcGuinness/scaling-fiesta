@@ -9,7 +9,7 @@ import java.util.Objects;
 public abstract class IntProperty implements Property<Integer> {
 
 	private final Integer value;
-	
+
 	protected IntProperty(final Integer value) {
 		this.value = value;
 	}

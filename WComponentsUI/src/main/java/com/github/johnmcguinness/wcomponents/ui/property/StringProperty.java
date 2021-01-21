@@ -3,13 +3,13 @@ package com.github.johnmcguinness.wcomponents.ui.property;
 import java.util.Objects;
 
 /**
- * 
+ *
  * @author John McGuinness
  */
 public abstract class StringProperty implements Property<String> {
 
 	private final String value;
-	
+
 	protected StringProperty(final String value) {
 		this.value = value;
 	}

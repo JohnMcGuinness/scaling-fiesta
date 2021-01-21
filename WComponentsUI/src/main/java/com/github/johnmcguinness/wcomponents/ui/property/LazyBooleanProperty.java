@@ -14,7 +14,7 @@ public abstract class LazyBooleanProperty implements Property<Lazy<Boolean>> {
 	protected LazyBooleanProperty(final Lazy<Boolean> value) {
 		this.value = value;
 	}
-	
+
 	@Override
 	public final Lazy<Boolean> value() {
 		return this.value;
