@@ -4,6 +4,7 @@ import com.github.bordertech.wcomponents.WComponent;
 import com.github.johnmcguinness.wcomponents.ui.Ref;
 import com.github.johnmcguinness.wcomponents.ui.component.Button;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
+import com.github.johnmcguinness.wcomponents.ui.component.PasswordInput;
 import com.github.johnmcguinness.wcomponents.ui.component.TextInput;
 
 /**
@@ -12,7 +13,7 @@ import com.github.johnmcguinness.wcomponents.ui.component.TextInput;
  * @param <T> the type of the component being referenced.
  */
 public final class ReferenceProperty<T extends WComponent> implements Property<Ref<T>>,
-		Panel.PropertySetter, TextInput.PropertySetter, Button.PropertySetter {
+		Panel.PropertySetter, TextInput.PropertySetter, Button.PropertySetter, PasswordInput.PropertySetter {
 
 	private final Ref<T> value;
 
@@ -46,5 +47,10 @@ public final class ReferenceProperty<T extends WComponent> implements Property<R
 	@Override
 	public void apply(final Button button) {
 		value().current((T) button);
+	}
+
+	@Override
+	public void apply(final PasswordInput password) {
+		value().current((T) password);
 	}
 }

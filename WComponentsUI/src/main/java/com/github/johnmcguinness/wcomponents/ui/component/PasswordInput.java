@@ -9,7 +9,7 @@
 //
 package com.github.johnmcguinness.wcomponents.ui.component;
 
-import com.github.bordertech.wcomponents.WTextField;
+import com.github.bordertech.wcomponents.WPasswordField;
 import com.github.johnmcguinness.wcomponents.ui.Lazy;
 import java.util.stream.Stream;
 
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
  *
  * @author John McGuinness
  */
-public final class PasswordInput extends WTextField {
+public final class PasswordInput extends WPasswordField {
 
 	private static final String READONLY_ATTRIBUTE = "PasswordInput.readOnly";
 

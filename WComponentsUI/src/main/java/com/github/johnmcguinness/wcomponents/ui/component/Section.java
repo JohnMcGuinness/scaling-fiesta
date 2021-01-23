@@ -30,9 +30,9 @@ public final class Section extends WSection {
 	 * @return a Section with properties applied.
 	 */
 	public static Section section(final Section.PropertySetter... props) {
-		final Section panel = new Section();
-		Stream.of(props).forEach(prop -> prop.apply(panel));
-		return panel;
+		final Section section = new Section();
+		Stream.of(props).forEach(prop -> prop.apply(section));
+		return section;
 	}
 
 	private Section() {

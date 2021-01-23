@@ -1,17 +1,20 @@
 package com.github.johnmcguinness.wcomponents.ui.property;
 
 import com.github.bordertech.wcomponents.Size;
+import com.github.bordertech.wcomponents.WPanel;
 import com.github.bordertech.wcomponents.layout.FlowLayout;
 import com.github.bordertech.wcomponents.layout.LayoutManager;
 import com.github.johnmcguinness.wcomponents.ui.HAlign;
 import com.github.johnmcguinness.wcomponents.ui.VAlign;
 import com.github.johnmcguinness.wcomponents.ui.component.Panel;
+import static com.github.johnmcguinness.wcomponents.ui.component.Panel.panel;
+import com.github.johnmcguinness.wcomponents.ui.component.Section;
 
 /**
  *
  * @author John McGuinness
  */
-public final class LayoutProperty implements Property<LayoutManager>, Panel.PropertySetter {
+public final class LayoutProperty implements Property<LayoutManager>, Panel.PropertySetter, Section.PropertySetter {
 
 	private final LayoutManager value;
 
@@ -43,5 +46,11 @@ public final class LayoutProperty implements Property<LayoutManager>, Panel.Prop
 	@Override
 	public void apply(final Panel panel) {
 		panel.setLayout(value());
+	}
+
+	@Override
+	public void apply(final Section section) {
+		final WPanel content = section.getContent();
+		content.setLayout(value());
 	}
 }
